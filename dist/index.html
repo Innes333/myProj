@@ -1,61 +1,146 @@
 <!DOCTYPE html>
-<html lang="ru" class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <title>Start gulp template</title>
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/vendor.min.css">
-    <link rel="stylesheet" href="css/header.min.css">
-    <link rel="stylesheet" href="css/main.min.css">
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <nav>
-              <ul class="nav">
-                <li><a href="1Home">Home</a></li>
-                <li><a href="2About">About</a></li>
-                <li><a href="3News">News</a></li>
-                <li><a href="4Contacts">Contacts</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
-    <main>
-      <div class="content-block center">
-        <h1 class="title">Write code here</h1>
-        <p class="subtitle">or click button and select some dom element</p><a href="elements.html" class="btn fool">my simple framework</a>
-      </div>
-    </main>
-    <footer>
-      <div class="copy">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">© <a href="http://tsumbaluk.in.ua">tsumbaluk.in.ua</a></div>
-            <div class="col-md-4 center"><a href="sitemap.xml"><i class="fa fa-sitemap">Sitemap</i></a></div>
-            <div class="col-md-4">
-              <div class="dev"><a href="http://tsumbaluk.in.ua/" target="_blank" rel="nofollow">Developed by<span>Alexander Tsymbalyuk</span></a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!--[if lt IE 9]
-    <script src="libs/html5shiv/es5-shim.min.js"></script>
-    <script src="libs/html5shiv/html5shiv.min.js"></script>
-    <script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
-    <script src="libs/respond/respond.min.js"></script>
-    -->
-    <!--![endif]-->
-    <script src="js/jquery-2.2.0.min.js"></script>
-    <script src="js/plagin.min.js"></script>
-    <script src="js/common.min.js"></script>
-  </body>
+<html class="no-js" lang="ru">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Portfolio Front-end developer - Inna Ivashchuk</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="path/to/image.jpg">
+
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">		
+
+	
+	<!-- Load CSS Start -->
+	<link rel="stylesheet" href="css/vendor.min.css">
+	<link rel="stylesheet" href="css/header.min.css">
+	<link rel="stylesheet" href="css/main.min.css">
+	<!-- Load CSS End -->
+
+</head>
+
+<body>
+<header>
+	<nav class="nav-bar">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-3">
+					<a href="#" class="logo"></a>
+				</div>
+				<div class="col-md-9">
+					<ul class="w-menu right">
+						<li><a href="#">Home</a></li>
+						<li><a href="#about">About me</a></li>
+						<li><a href="#portfolio">Portfolio</a></li>
+						<li><a href="#blog">Blog</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>			
+	</nav>
+	<div class="content-block center">				
+		<h1 class="title">There is my code</h1>
+		<p class="subtitle">or click button and select some dom element</p>
+		<a href="elements.html" class="btn fool">my simple framework</a>				
+	</div>
+</header>
+
+<section id="about">
+	<div class="container">
+		<div class="row">			
+			<div class="col-md-12">
+			<h3 class="heading">About me</h3>
+				<div class="slider">
+					<!-- slider start -->
+					<div class="item">
+						<div class="w-image col-md-4">
+							<img class="slider-img" src="img/depp.png" alt="dog">							
+						</div>
+						<div class="w-info col-md-8">
+							<h4 class="heading"> Lorem ipsum dolor</h4>
+							<div class="content">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem repellendus sapiente totam explicabo beatae, odit fugit, quos modi nobis atque voluptatem facilis, tempora nesciunt accusamus. Voluptatem excepturi blanditiis, a suscipit!
+							</div>								
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="w-info col-md-8">
+							<h4 class="heading"> Lorem ipsum dolor</h4>			
+							<div class="content">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem repellendus sapiente totam explicabo beatae, odit fugit, quos modi nobis atque voluptatem facilis, tempora nesciunt accusamus. Voluptatem excepturi blanditiis, a suscipit!
+							</div>
+						</div>
+						<div class="w-image col-md-4">
+							<img class="slider-img" title="Alexandr Tsumbaluk" src="img/brad.jpg" alt="dog">
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="w-image col-md-4">
+							<img class="slider-img" src="img/brad.jpg" alt="dog">
+						</div>
+						<div class="w-info col-md-8">
+							<h4 class="t-heading"> Lorem ipsum dolor</h4>
+							<div class="content">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem repellendus sapiente totam explicabo beatae, odit fugit, quos modi nobis atque voluptatem facilis, tempora nesciunt accusamus. Voluptatem excepturi blanditiis, a suscipit!
+							</div>								
+						</div>
+					</div>
+					<!-- slider end		 -->
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="portfolio">
+	<div class="container">
+		<div class="row">
+			<h3 class="heading">Portfolio</h3>
+			<div class="col-md-5"></div>
+		</div>
+	</div>
+</section>
+<footer>
+	<div class="copy">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					© <a href="http://tsumbaluk.in.ua">tsumbaluk.in.ua</a>
+				</div>
+				<div class="col-md-4 center">
+					<a href="sitemap.xml"><i class="fa fa-sitemap"></i> hghfgkf</a>
+				</div>
+				<div class="col-md-4">
+					<div class="dev">
+						<a href="http://inna-i.zz.mu/" target="_blank" rel="nofollow">
+							Developed by
+							<span>Inna </span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>	
+
+	<!--[if lt IE 9]>
+	<script src="libs/html5shiv/es5-shim.min.js"></script>
+	<script src="libs/html5shiv/html5shiv.min.js"></script>
+	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="libs/respond/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- Load Scripts Start -->
+		<script src="js/jquery-2.2.0.min.js"></script>
+		<script src="js/plagin.min.js"></script>
+		<script src="js/common.min.js"></script>
+	<!-- Load Scripts End -->
+
+</body>
 </html>
