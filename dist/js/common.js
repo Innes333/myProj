@@ -8,7 +8,7 @@ $(function() {
 			body: $('body'),
 			wind: $(window),
 			headerSel: $('header'),
-			mobButton: $('.mob-button'),
+			burgerBtn: $('.burger-button'),
 			slider: $('.slider')
 		},
 		opt: {			
@@ -25,6 +25,24 @@ $(function() {
 
 		viewPortHeight: function() {
 				return this.sel.wind.height();
+		},
+
+		wordTyping: function() {
+			var sentenseString = "Hello! My name is Inna and I'm Front-end developer",
+					sentenseArray = sentenseString.split(''),
+					sentenseCount = 0;
+
+			var letterDelay = function() {
+				if (sentenseCount > sentenseArray.length) {
+					clearInterval(typeDel);
+					sentenseCount = 0;
+				} else {
+					$('.title').append(sentenseArray[sentenseCount]); 
+					sentenseCount++;							
+				}
+			}
+      
+      var typeDel = setInterval(letterDelay, 100);					
 		},
 
 		tabs: function(el){
@@ -71,7 +89,7 @@ $(function() {
 		},
 		
 		fullHeight: function(el){
-			$(el).css('min-height',this.viewPortHeight()+'px');
+			$(el).css('height',this.viewPortHeight()+'px');					
 		},
 		dragstart: function(el){
 			$(el).on('dragstart',function(event){
@@ -83,7 +101,7 @@ $(function() {
 			// default functions
 			// this.dragstart(this.sel.img);
 			// this.dragstart(this.sel.linc);
-
+			//this.wordTyping();
 			// tabs init
 			this.tabs(this.sel.tabs);
 			// popup init
@@ -93,7 +111,7 @@ $(function() {
 			//owl slider init
 			this.sel.slider.owlCarousel(this.opt.owlOptions);
 			//mob button toggle
-			this.toggleC(this.sel.mobButton);
+			this.toggleC(this.sel.burgerBtn);
 		}
 	};
 
