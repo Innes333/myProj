@@ -14,7 +14,7 @@ $(function() {
 		opt: {			
 			owlOptions: {
 				autoPlay: 3000,
-				navigation: true,
+				navigation: false,
 				singleItem: true,
 				autoPlay: false,	
 				pagination: true,

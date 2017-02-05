@@ -47,7 +47,7 @@ header
 		position: absolute
 		top: 50%
 		left: 50%
-		transform: translate(-50%,-50%)
+		transform: translate(-50%,-55%)
 		.title
 			font-size: 110px
 			line-height: 120px
@@ -93,19 +93,19 @@ header
 	right: 50px
 	top: 50px
 	z-index: 100	
-	width: 45px
+	width: 40px
 	height: 35px
 	.burger-button
 		position: absolute
-		top: 5px
+		top: 8px
 		right: 10px
 		display: inline-block
-		width: 45px
+		width: 40px
 		height: 35px
 		span
 			display: block
-			width: 45px
-			height: 6px
+			width: 40px
+			height: 5px
 			margin-bottom: 3px
 			background-color: $main
 		&.active + .w-menu
@@ -184,10 +184,6 @@ header
 					background-color: $main
 					width: 25px
 
-section
-	padding: 30px 0
-	border-bottom: 1px solid $silver
-
 .heading
 	margin-bottom: 20px
 	text-transform: uppercase
@@ -198,35 +194,40 @@ h4.heading
 	font-family: inherit
 	font-style: italic
 
-// Section about 
+// Section about start
 #about
 	.w-image
-		img
-			width: 100%
-
-.slider
-	margin-top: 40px
-	.item
-		.w-image
-			img
-				border-radius: 50%
-				max-height: 350px
-				width: 100%		
-	.owl-controls
-		.owl-buttons
-			width: 100%
-			position: absolute
-			height: 40px
-			top: 50%
-			margin-top: -20px
-			.owl-prev
+		min-height: 400px
+		padding: 20px 50px
+		text-align: center
+		background-color: #5a5aa3
+		background: filter-gradient(#5a5aa3, #c178a7, horizontal)
+		background: linear-gradient(left top, #5a5aa3 0%, #7b7bbd 17%, #876a96 49%, #9d729f 70%, #c178a7 100%)
+		.headline
+			font-size: 25px
+			position: relative
+			color: #fff
+			text-align: left
+			&:before
 				position: absolute
+				content: ''
+				bottom: -4px
 				left: 0
-				top: 0
-			.owl-next
-				position: absolute
-				right: 0
-				top: 0
+				height: 2px
+				width: 35px
+				background-color: #fff
+		.sub-headline
+			margin-top: 30px
+			color: #fff
+			font-size: 17px
+			font-family: 'Monotype Corsiva','Comic Sans MS',cursive
+			font-weight: 400
+			text-align: left
+		img
+			width: 170px
+			border-radius: 50%
+
+
 
 
 
