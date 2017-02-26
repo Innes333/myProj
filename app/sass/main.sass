@@ -19,8 +19,8 @@
 //Custom Styles Here
 header
 	position: relative
-	background-image: url("../img/bg.jpg")
-	//background-image: url("../img/galaxy.jpg")
+	//background-image: url("../img/bg.jpg")
+	background-image: url("../img/galaxy.jpg")
 	background-size: cover
 	background-attachment: fixed
 	padding: 25px
@@ -54,11 +54,11 @@ header
 			line-height: 120px
 			letter-spacing: 5px
 			background-color: #FFF
-			background-image: url("../img/title-bg.jpg")
-			//background-image: url("../img/galaxy.jpg")
+			//background-image: url("../img/title-bg.jpg")
+			background-image: url("../img/galaxy.jpg")
 			background-repeat: no-repeat
 			background-attachment: fixed
-			background-size: 150%
+			background-size: 110%
 			color: $main
 			-webkit-background-clip: text
 			-webkit-text-fill-color: transparent
@@ -94,9 +94,13 @@ header
 	text-align: right
 	right: 50px
 	top: 50px
-	z-index: 100	
+	z-index: 100
 	width: 40px
 	height: 35px
+	@include transition(top, 0.5s)
+	&.fixed
+		top: 15px
+		right: 20px
 	.burger-button
 		position: absolute
 		top: 8px
@@ -108,7 +112,6 @@ header
 			display: block
 			width: 40px
 			height: 5px
-			margin-bottom: 3px
 			background-color: $main
 		&.active + .w-menu
 			width: 400px
@@ -190,7 +193,7 @@ header
 	text-transform: uppercase
 h3.heading
 	letter-spacing: 2px
-	text-align: center	
+	text-align: center
 h4.heading
 	font-family: inherit
 	font-style: italic
@@ -211,8 +214,8 @@ h4.heading
 		color: #fff
 		text-align: center
 		background-color: #5a5aa3
-		background: filter-gradient(#5a5aa3, #c178a7, horizontal)
-		background: linear-gradient(left top, #5a5aa3 0%, #7b7bbd 17%, #876a96 49%, #9d729f 70%, #c178a7 100%)
+		background: filter-gradient(#503388, #c178a7, horizontal)
+		background: linear-gradient(left top, #503388 0%, #453184 17%, #5d43a5 49%, #8b4aa3 70%, #914fbc 100%)
 		.headline
 			position: relative
 			margin: 30px 0
@@ -278,7 +281,6 @@ h4.heading
 		height: 250px
 		text-align: center
 		display: inline-block
-
 	.cube-box
 		display: inline-block
 		transition: all 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275)
@@ -288,7 +290,6 @@ h4.heading
 		height: 100%
 		transform-style: preserve-3d
 		transform: rotateX(-15deg) rotateY(15deg)
-
 	.cube
 		overflow: hidden
 		position: absolute
@@ -300,75 +301,71 @@ h4.heading
 		font-size: 37px
 		font-weight: 600
 		opacity: 0.8
-
+		cursor: pointer
+		@include transition(background 0.4s)
+		&:hover
+			background-color: #2d1565
+			border: 1px solid #2d1565
 	.cube-front
 		width: 250px
 		height: 250px
 		transform: translate3d(0, 0, 125px)
-
 	.cube-top
 		width: 250px
 		height: 250px
 		transform: rotateX(90deg) translate3d(0, 0, 125px)
-
 	.cube-bottom
 		width: 250px
 		height: 250px
 		transform: rotateX(-90deg) translate3d(0, 0, 125px)
-
 	.cube-left
 		width: 250px
 		height: 250px
 		left: 50%
 		margin-left: -125px
 		transform: rotateY(-90deg) translate3d(0, 0, 125px)
-
 	.cube-right
 		width: 250px
 		height: 250px
 		left: 50%
 		margin-left: -125px
 		transform: rotateY(90deg) translate3d(0, 0, 125px)
-
 	.cube-front, .cube-left,
-	.cube-right, .cube-top, 
+	.cube-right, .cube-top,
 	.cube-bottom, .cube-back
 		background-size: auto 100%
-
 	.cube-back
 		width: 250px
 		height: 250px
 		transform: rotateY(180deg) translate3d(0, 0, 125px)
 
-	#radio-left:checked ~ .space3d .cube-box
-		transform: rotateY(90deg)
-
-	#radio-right:checked ~ .space3d .cube-box
-		transform: rotateY(-90deg)
-
-	#radio-bottom:checked ~ .space3d .cube-box
-		transform: rotateX(90deg)
-
-	#radio-top:checked ~ .space3d .cube-box
-		transform: rotateX(-90deg)
-
-	#radio-back:checked ~ .space3d .cube-box
-		transform: rotateY(180deg)
-
  // 3D cube end
+// Tabs
+.tabs
+	position: relative
+	overflow: hidden
+	min-height: 300px
+	.tab
+		position: absolute
+		top: -100%
+		opacity: 0
+		left: 0
+		@include transition(all 1s)
+		&.active
+			opacity: 1
+			top: 0
 
 
-
-footer 
+footer
 	background-color: $main
-	min-height: 50px	
-	color: $white		
+	min-height: 50px
+	color: $white
 	position: absolute
 	margin-top: 40px
 	bottom: 0
 	left: 0
 	width: 100%
-	.copy 
+	.copy
 		position: absolute
 		min-height: 50px
 		bottom: 0
@@ -379,7 +376,7 @@ footer
 			color: $white
 			&:hover
 				text-decoration: underline
-		.dev 
+		.dev
 			position: absolute
 			right: 0
 			bottom: -45px
@@ -393,7 +390,7 @@ footer
 			background-size: 20px
 			font-size: 10px
 			padding-top: 5px
-			span 
+			span
 				display: block
 
 
