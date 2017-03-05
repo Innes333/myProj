@@ -201,14 +201,13 @@ h4.heading
 // Section about start
 #about
 	position: relative
-	min-height: 400px
+	min-height: 460px
 	padding: 0
-	padding-bottom: 60px
-	.w-text
+	.w-text-about
 		position: absolute
 		top: -80px
 		left: 0
-		padding: 20px 50px 50px
+		padding: 80px 50px 90px
 		min-height: 535px
 		z-index: 11
 		color: #fff
@@ -218,10 +217,11 @@ h4.heading
 		background: linear-gradient(left top, #503388 0%, #453184 17%, #5d43a5 49%, #8b4aa3 70%, #914fbc 100%)
 		.headline
 			position: relative
-			margin: 30px 0
-			font-size: 32px
+			margin-bottom: 40px
+			font-size: 38px
 			color: #fff
 			text-align: left
+			text-shadow: 2px 5px 5px $main
 			&:before
 				position: absolute
 				content: ''
@@ -232,8 +232,7 @@ h4.heading
 				background-color: #fff
 		p
 			text-align: left
-			font-size: 19px
-			font-style: italic
+			font-size: 18px
 			line-height: 32px
 			letter-spacing: 2px
 		.sub-headline
@@ -243,23 +242,58 @@ h4.heading
 			font-family: 'Monotype Corsiva','Comic Sans MS',cursive
 			font-weight: 400
 			text-align: right
-		img
-			width: 170px
-			border-radius: 50%
-	.w-content
-		padding-left: 20px
-		.content-item
-			margin-bottom: 25px
-			.heading
-				margin-bottom: 10px
 
+	.w-content
+		padding-left: 70px
+		min-height: 450px
+		position: relative
+		.v-heading
+			position: absolute
+			top: 50%
+			left: -130px
+			margin-top: -50px
+			transform: rotate(-90deg)
+			color: $main
+			text-transform: uppercase
+			font-size: 19px
+			letter-spacing: 3px
+			text-shadow: 1px 2px 3px #bdb1dc
+		.content-item
+			.w-image
+				position: relative
+				width: 200px
+				height: 200px
+				margin: 0 auto
+				border-radius: 50%
+				overflow: hidden
+				box-shadow: 2px 2px 7px #a28bda
+				&::before
+					position: absolute
+					content: ''
+					top: 0
+					left: 0
+					height: 200px
+					width: 200px
+					background-color: rgba(66, 38, 134, 0.3)
+				img
+					width: 100%
+			.w-info
+				margin-top: 30px
+				text-align: center
+			.w-hobby
+				margin-top: 20px
+				.fa
+					margin: 0 5px
+					color: $main
+					font-style: 20px
 
 #skills,
 #blog,
 #contact
+	margin: 40px 0
 	.headline
 		position: relative
-		margin: 30px 0
+		margin-bottom: 30px
 		padding-left: 50px
 		font-size: 32px
 		color: #000
@@ -291,8 +325,9 @@ h4.heading
 		transform-style: preserve-3d
 		transform: rotateX(-15deg) rotateY(15deg)
 	.cube
-		overflow: hidden
 		position: absolute
+		user-select: none
+		overflow: hidden
 		border: 1px solid $main
 		background: $main
 		box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.1), 0 0 50px rgba(0, 0, 0, 0.3)
@@ -354,6 +389,28 @@ h4.heading
 		&.active
 			opacity: 1
 			top: 0
+// particles section
+#particles-js
+	position: relative
+	margin-top: 30px
+	max-height: 280px
+	color: #fff
+	overflow: hidden
+	background: url(../img/galaxy.jpg)
+	//background-color: $main
+	//background: linear-gradient(left top, #503388 0%, #453184 17%, #5d43a5 49%, #8b4aa3 80%, #914fbc 100%)
+	background-attachment: fixed
+	background-position: center
+	background-repeat: no-repeat
+	background-size: cover
+	.label
+		position: absolute
+		top: 50%
+		left: 50px
+		margin-top: -15px
+		font-size: 25px
+		text-transform: uppercase
+
 
 
 footer

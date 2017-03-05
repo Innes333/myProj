@@ -39,14 +39,14 @@
 						tabIndex = that.index(),
 						tabsArray = $('.tab');
 
-			// 	that.parent().css({
-			// 			'transform': 'rotateX(' + rotateX + 'deg) ' +
-			// 			'rotateY(' + rotateY + 'deg)'
-			// 		});
-			// 		for (i=0; i < tabsArray.length; i++) {
-			// 			$(tabsArray[i]).removeClass('active');
-			// 		};
-			// 		$(tabsArray[tabIndex]).addClass('active');
+				that.parent().css({
+						'transform': 'rotateX(' + rotateX + 'deg) ' +
+						'rotateY(' + rotateY + 'deg)'
+					});
+					for (i=0; i < tabsArray.length; i++) {
+						$(tabsArray[i]).removeClass('active');
+					};
+					$(tabsArray[tabIndex]).addClass('active');
 			});
 
 		},
@@ -71,17 +71,7 @@
 					'transform': 'rotateX(' + rotateX + 'deg) ' +
 					'rotateY(' + rotateY  + 'deg)'
 				});
-
-			}).on('mousemove', function(e) {
-				if(cube.flag) {
-					xChange = e.clientX - cube.startX;
-					yChange = e.clientY - cube.startY;
-					//methods.onMouseMoveListn(e);
-					console.log(xChange, yChange);
-				}
 			});
-
-
 		}
 
 	};
@@ -97,11 +87,120 @@
 		// cube rotatio
 		methods.cubeRotation(cube.cube);
 		methods.cubeTransform(cube.cube);
-		
+
 		$(window).on('mouseup',function() {
 			cube.flag = false;
 			console.log(cube.flag);
 		});
 	});
 
+	particlesJS('particles-js',{
+	  "particles": {
+	    "number": {
+	      "value": 110,
+	      "density": {
+	        "enable": true,
+	        "value_area": 800}
+	    },
+	    "color": {
+	      "value": "#fff"
+	    },
+	    "shape": {
+	      "type": "circle",
+	      "stroke": {
+	        "width": 0,
+	        "color": "#000000"
+	      },
+	      "polygon": {
+	        "nb_sides": 5
+	      },
+	      "image": {
+	        "src": "img/github.svg",
+	        "width": 100,
+	        "height": 100
+	      }
+	    },
+	    "opacity": {
+	      "value": 0.5,
+	      "random": false,
+	      "anim": {
+	        "enable": false,
+	        "speed": 1,
+	        "opacity_min": 0.1,
+	        "sync": false
+	      }
+	    },
+	    "size": {
+	      "value": 3.8,
+	      "random": true,
+	      "anim": {
+	        "enable": false,
+	        "speed": 40,
+	        "size_min": 0.1,
+	        "sync": false
+	      }
+	    },
+	    "line_linked": {
+	      "enable": true,
+	      "distance": 150,
+	      "color": "#fff",
+	      "opacity": 0.4,
+	      "width": 2
+	    },
+	    "move": {
+	      "enable": true,
+	      "speed": 4,
+	      "direction": "none",
+	      "random": false,
+	      "straight": false,
+	      "out_mode": "out",
+	      "bounce": false,
+	      "attract": {
+	        "enable": false,
+	        "rotateX": 600,
+	        "rotateY": 1200
+	      }
+	    }
+	  },
+	  "interactivity": {
+	    "detect_on": "canvas",
+	    "events": {
+	      "onhover": {
+	        "enable": false,
+	        "mode": "repulse"
+	      },
+	      "onclick": {
+	        "enable": false,
+	        "mode": "push"
+	      },
+	      "resize": true
+	    },
+	    "modes": {
+	      "grab": {
+	        "distance": 400,
+	        "line_linked": {
+	          "opacity": 1
+	        }
+	      },
+	      "bubble": {
+	        "distance": 400,
+	        "size": 30,
+	        "duration": 2,
+	        "opacity": 8,
+	        "speed": 3
+	      },
+	      "repulse": {
+	        "distance": 200,
+	        "duration": 0.4
+	      },
+	      "push": {
+	        "particles_nb": 4
+	      },
+	      "remove": {
+	        "particles_nb": 2
+	      }
+	    }
+	  },
+	  "retina_detect": true
+	});
 })();
