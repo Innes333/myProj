@@ -34,9 +34,9 @@
 		cubeRotation: function(cube) {
 			cube.on('click', function(e) {
 				var that = $(this),
-						rotateX = that.data('rotate-x'),
-						rotateY = that.data('rotate-y'),
-						tabIndex = that.index(),
+						rotateX = this.data('rotate-x'),
+						rotateY = this.data('rotate-y'),
+						tabIndex = this.index(),
 						tabsArray = $('.tab');
 
 				that.parent().css({
