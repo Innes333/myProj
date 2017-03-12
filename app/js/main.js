@@ -33,9 +33,10 @@
 		},
 		cubeRotation: function(cube) {
 			cube.on('click', function(e) {
-				var rotateX = this.data('rotate-x'),
-						rotateY = this.data('rotate-y'),
-						tabIndex = this.index(),
+				var that = $(this),
+						rotateX = that.data('rotate-x'),
+						rotateY = that.data('rotate-y'),
+						tabIndex = that.index(),
 						tabsArray = $('.tab');
 
 				that.parent().css({
@@ -71,6 +72,195 @@
 					'rotateY(' + rotateY  + 'deg)'
 				});
 			});
+		},
+
+		canvasStars: function() {
+			//start
+			//	varriables
+			var _createClass = function () {
+				function defineProperties(target, props) {
+					 for (var i = 0; i < props.length; i++) {
+						 var descriptor = props[i];
+						 descriptor.enumerable = descriptor.enumerable || false;
+						 descriptor.configurable = true;
+						  if ("value" in descriptor) descriptor.writable = true;
+							Object.defineProperty(target, descriptor.key, descriptor); }
+						}
+						return function (Constructor, protoProps, staticProps) {
+							if (protoProps) defineProperties(Constructor.prototype, protoProps);
+							 if (staticProps) defineProperties(Constructor, staticProps);
+							 return Constructor; }; }();
+
+			function _classCallCheck(instance, Constructor) {
+				if (!(instance instanceof Constructor)) {
+					 throw new TypeError("Cannot call a class as a function"); } }
+
+			var PI2 = 2 * Math.PI;
+			// amount is relative to screen size, this is the divider
+			// for the result (hight * width)
+			var AMOUNT_DIVIDER = 2800;
+			// the connect star field
+			var DIST_MAX = 100;
+			var CONNECT_RADIUS = 100;
+			// speed of rotating
+			var ROTATION = 0.0001;
+
+			var canvas = document.getElementById('stars');
+			canvas.width = 2000;
+			canvas.height = 400;
+
+			var ctx = canvas.getContext('2d');
+			ctx.lineWidth = 0.4;
+
+			var bounds = {
+			  top: -10,
+			  left: -10,
+			  right: canvas.width + 10,
+			  bottom: canvas.height + 10
+			};
+
+			var center = {
+			  x: Math.floor(canvas.width / 2),
+			  y: Math.floor(canvas.height / 2)
+			};
+
+			var connectArea = {
+			  destX: 0,
+			  destY: 0,
+			  x: center.x,
+			  y: center.y
+			};
+
+			/*
+			the dots
+			*/
+			var dots = [];
+
+			var Dot = function () {
+			  function Dot() {
+			    _classCallCheck(this, Dot);
+
+			    this.x = Math.random() * canvas.width;
+			    this.y = Math.random() * canvas.height;
+			    this.radius = Math.random() * 1.2;
+			  }
+
+			  _createClass(Dot, [{
+			    key: 'update',
+			    value: function update() {
+			      if (this.y > bounds.bottom){
+							this.y = bounds.top;
+						}
+						else if (this.y < bounds.top) {
+							this.y = bounds.bottom;
+						}
+
+			      // http://stackoverflow.com/a/15109215/3137109
+			      this.x = Math.cos(ROTATION) * (this.x - center.x) - Math.sin(ROTATION) * (this.y - center.y) + center.x;
+			      this.y = Math.sin(ROTATION) * (this.x - center.x) + Math.cos(ROTATION) * (this.y - center.y) + center.y;
+			    }
+			  }, {
+			    key: 'draw',
+			    value: function draw() {
+			      ctx.beginPath();
+			      ctx.fillStyle = '#fff';
+			      if (Math.random() < 0.99) ctx.arc(this.x, this.y, this.radius, 0, PI2, false);
+			      ctx.fill();
+			    }
+			  }]);
+
+			  return Dot;
+			}();
+			/*
+			  and lets start
+			*/
+			function resize() {
+			  canvas.width = canvas.offsetWidth;
+			  canvas.height = 300;
+
+			  bounds.right = canvas.width - 1;
+			  bounds.bottom = canvas.height - 1;
+
+			  ctx.lineWidth = 0.4;
+
+			  center = {
+			    x: Math.floor(canvas.width / 2),
+			    y: Math.floor(canvas.height / 2)
+			  };
+
+			  connectArea.destX = center.x;
+			  connectArea.destY = center.y * 0.1;
+
+			  dots.length = 0;
+
+			  var amount = Math.floor(canvas.width * canvas.height / AMOUNT_DIVIDER);
+			  for (var i = 0; i < amount; i++) {
+			    dots.push(new Dot());
+			  }
+			}
+
+			resize();
+			animateDots();
+
+			/* funtctions	*/
+
+			function updateConnectArea() {
+			  var distX = connectArea.destX - connectArea.x;
+			  if (distX > 5 || distX < 5) connectArea.x += Math.floor(distX / 20);
+			  var distY = connectArea.destY - connectArea.y;
+			  if (distX > 5 || distX < 5) connectArea.y += Math.floor(distY / 20);
+			}
+
+			function connectDots() {
+			  for (var i = 0, dot1; dot1 = dots[i]; i++) {
+			    for (var j = i + 1, dot2; dot2 = dots[j]; j++) {
+
+			      var xDiff = dot1.x - dot2.x,
+			          yDiff = dot1.y - dot2.y;
+			      var xCoreDiff = dot1.x - connectArea.x,
+			          yCoreDiff = dot1.y - connectArea.y;
+
+			      if (xDiff < DIST_MAX && xDiff > -DIST_MAX && yDiff < DIST_MAX && yDiff > -DIST_MAX && xCoreDiff < CONNECT_RADIUS && xCoreDiff > -CONNECT_RADIUS && yCoreDiff < CONNECT_RADIUS && yCoreDiff > -CONNECT_RADIUS) {
+
+			        ctx.beginPath();
+			        ctx.strokeStyle = '#fff';
+			        ctx.moveTo(dot1.x + 0.0, dot1.y + 0.0);
+			        ctx.lineTo(dot2.x + 0.0, dot2.y + 0.0);
+			        ctx.stroke();
+			        ctx.closePath();
+			      }
+			    }
+			  }
+			}
+
+			function animateDots() {
+			  requestAnimationFrame(animateDots);
+
+			  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+			  updateConnectArea();
+
+			  for (var i = 0, dot; dot = dots[i]; i++) {
+			    dot.update();
+			  }connectDots();
+			  for (var _i = 0, _dot; _dot = dots[_i]; _i++) {
+			    _dot.draw();
+			  }
+			}
+
+			$('#stars').on('mousemove', function (e) {
+			  connectArea.destX = e.clientX || e.touches && e.touches[0].pageX;
+			  connectArea.destY = e.clientY || e.touches && e.touches[0].pageY;
+			});
+
+			$('#stars').on('mouseleave', function (e) {
+			  connectArea.destX = center.x;
+			  connectArea.destY = center.y;
+			});
+
+			window.addEventListener('resize', resize);
+
+			//END
 		}
 
 	};
@@ -86,120 +276,8 @@
 		// cube rotatio
 		methods.cubeRotation(cube.cube);
 		methods.cubeTransform(cube.cube);
+		methods.canvasStars();
 
-		$(window).on('mouseup',function() {
-			cube.flag = false;
-			console.log(cube.flag);
-		});
 	});
 
-	particlesJS('particles-js',{
-	  "particles": {
-	    "number": {
-	      "value": 110,
-	      "density": {
-	        "enable": true,
-	        "value_area": 800}
-	    },
-	    "color": {
-	      "value": "#fff"
-	    },
-	    "shape": {
-	      "type": "circle",
-	      "stroke": {
-	        "width": 0,
-	        "color": "#000000"
-	      },
-	      "polygon": {
-	        "nb_sides": 5
-	      },
-	      "image": {
-	        "src": "img/github.svg",
-	        "width": 100,
-	        "height": 100
-	      }
-	    },
-	    "opacity": {
-	      "value": 0.5,
-	      "random": false,
-	      "anim": {
-	        "enable": false,
-	        "speed": 1,
-	        "opacity_min": 0.1,
-	        "sync": false
-	      }
-	    },
-	    "size": {
-	      "value": 3.8,
-	      "random": true,
-	      "anim": {
-	        "enable": false,
-	        "speed": 40,
-	        "size_min": 0.1,
-	        "sync": false
-	      }
-	    },
-	    "line_linked": {
-	      "enable": true,
-	      "distance": 150,
-	      "color": "#fff",
-	      "opacity": 0.4,
-	      "width": 2
-	    },
-	    "move": {
-	      "enable": true,
-	      "speed": 4,
-	      "direction": "none",
-	      "random": false,
-	      "straight": false,
-	      "out_mode": "out",
-	      "bounce": false,
-	      "attract": {
-	        "enable": false,
-	        "rotateX": 600,
-	        "rotateY": 1200
-	      }
-	    }
-	  },
-	  "interactivity": {
-	    "detect_on": "canvas",
-	    "events": {
-	      "onhover": {
-	        "enable": false,
-	        "mode": "repulse"
-	      },
-	      "onclick": {
-	        "enable": false,
-	        "mode": "push"
-	      },
-	      "resize": true
-	    },
-	    "modes": {
-	      "grab": {
-	        "distance": 400,
-	        "line_linked": {
-	          "opacity": 1
-	        }
-	      },
-	      "bubble": {
-	        "distance": 400,
-	        "size": 30,
-	        "duration": 2,
-	        "opacity": 8,
-	        "speed": 3
-	      },
-	      "repulse": {
-	        "distance": 200,
-	        "duration": 0.4
-	      },
-	      "push": {
-	        "particles_nb": 4
-	      },
-	      "remove": {
-	        "particles_nb": 2
-	      }
-	    }
-	  },
-	  "retina_detect": true
-	});
 })();

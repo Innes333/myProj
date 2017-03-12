@@ -70,16 +70,6 @@ gulp.task('vendorCss', function () {
     .pipe(gulp.dest('dist/css'));
 });
 
-// gulp.task('templates', function() {
-//   var YOUR_LOCALS = {};
-//   gulp.src('app/**/*.jade')
-//     .pipe(jade({
-//       locals: YOUR_LOCALS,
-//       pretty: true
-//     }))
-//     .pipe(gulp.dest('./dist/'))
-// });
-
 gulp.task('htmlDist', function() {
 	return gulp.src('app/**/*')
 	.pipe(gulp.dest('dist/'));
