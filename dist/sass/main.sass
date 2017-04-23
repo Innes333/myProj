@@ -1,9 +1,7 @@
 @import "bourbon"
 @import "_vars.sass"
 @import "_mixins.sass"
-@import "_form.sass"
-@import "_popup.sass"
-@import "_tabs.sass"
+
 
 %extend_before
 	position: absolute
@@ -23,8 +21,8 @@ header
 	background-image: url("../img/galaxy.jpg")
 	background-size: cover
 	background-attachment: fixed
-	padding: 25px
-	border: 25px solid #fff
+	padding: 30px
+	border: 15px solid #fff
 	.flower-1
 		position: absolute
 		bottom: -40px
@@ -50,8 +48,8 @@ header
 		left: 50%
 		transform: translate(-50%,-55%)
 		.title
-			font-size: 110px
-			line-height: 120px
+			font-size: 100px
+			line-height: 110px
 			letter-spacing: 5px
 			background-color: #FFF
 			//background-image: url("../img/title-bg.jpg")
@@ -207,7 +205,7 @@ h4.heading
 		position: absolute
 		top: -80px
 		left: 0
-		padding: 80px 50px 90px
+		padding: 80px 50px 65px
 		min-height: 555px
 		z-index: 11
 		color: #fff
@@ -233,7 +231,7 @@ h4.heading
 		p
 			text-align: left
 			font-size: 18px
-			line-height: 32px
+			line-height: 27px
 			letter-spacing: 2px
 		.sub-headline
 			margin: 30px 0
@@ -277,15 +275,18 @@ h4.heading
 					background-color: rgba(66, 38, 134, 0.3)
 				img
 					width: 105%
+					transition: transform 0.4s
+					&:hover
+						transform: scale(1.5)
 			.w-info
 				margin-top: 30px
 				text-align: center
 			.w-hobby
 				margin-top: 20px
-				.fa
-					margin: 0 5px
+				i
+					padding-left: 10px
 					color: $main
-					font-style: 20px
+					font-size: 20px
 
 #skills,
 #blog,
