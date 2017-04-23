@@ -77,9 +77,20 @@
 							</div>
 							<div class="w-hobby">
 								<span class="label">Hobbies:</span>
-								<i class="icon-video-camera"></i>
-								<i class="icon-music"></i>
-								<i class="icon-gym"></i>
+								<i class="icon-code"></i>
+								<i class="icon-sports-shoe"></i>
+								<i class="icon-cassette"></i>
+								<i class="icon-film"></i>
+							</div>
+							<div class="w-location">
+								Location:
+								<i class="icon-location"></i> Kiev, Ukraine
+							</div>
+							<div class="w-languages">
+								Languages: 
+								<span>UA</span>
+								<span>RU</span>
+								<span>EN</span>
 							</div>
 						</div>
 					</div>
@@ -129,6 +140,15 @@
 	<canvas id="stars"></canvas>
 </section>
 
+<section id="resume">
+	<h3 class="headline">Resume</h3>
+		<div class="container">
+			<div class="row">
+				
+			</div>
+		</div>
+</section>
+
 <section id="blog">
 		<h3 class="headline">Blog</h3>
 		<div class="container">
@@ -161,6 +181,7 @@
 					</div>
 					<div class="w-content">
 						<div class="date">10.03.2017</div>
+						<span class="icon-pencil"></span>
 						<div class="category">Experience and inspiration</div>
 						<div class="theme">How to become a Front-end developer</div>
 						<div class="context">
@@ -179,51 +200,41 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-5">
-						<h3> Where you can find me? See links below</h3>
-						<ul>
-							<li>
-								<span class="icon-email"></span>
-								<a href="mailto:innes333@gmail.com">innes333@gmail.com</a>
-							</li>
-							<li>
-								<span class="icon-phone"></span>
-								<span>+38(098)-76-27-127</span>
-							</li>
-							<li>
-								<span class="icon-github"></span>
-								<a href="https://github.com/Innes333/">Github</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<span class="icon-facebook"></span>
-								<a href="https://www.facebook.com/Innes333">Facebook</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<span class="icon-linkedin"></span>
-								<a href="https://www.linkedin.com/in/innes333/">Linkedin</a>
-							</li>
-						</ul>
+					<div class="contact w-phone">
+						<span class="icon-phone2"></span>
+						+38098-76-27-127
+					</div>
+					<div class="contact w-mail">
+						<span class="icon-mail2"></span>
+						innes333@gmail.com
+					</div>
+					<div class="contact w-fb">
+						<span class="icon-facebook"></span>
+						Find me on <a href="https://www.facebook.com/Innes333">Facebook</a>
+					</div>
+					<div class="contact w-fb">
+						<span class="icon-facebook"></span>
+						Find me on <a href="https://www.linkedin.com/in/innes333/">Linkedin</a>
+					</div>
 				</div>
+
 				<div class="col-md-7">
-					<form>
+					<form class="w-form" action="">
 						<div class="form-group">
-							<label for="name">Fill your name</label>
-							<input name="name" type="text" palceholder="Place for your name"/>
+							<label for="user-name">Fill your name</label>
+							<input id="user-name" type="text" placeholder="Write here your name">
 						</div>
 						<div class="form-group">
-							<label for="email">Fill your e-mail</label>
-							<input name="email" type="text" palceholder="Place for e-mail"/>
+							<label for="user-mail">Fill your e-mail</label>
+							<input id="user-mail" type="text" placeholder="example@gmail.com">
 						</div>
 						<div class="form-group">
-							<label for="number">Can be your phone numberr</label>
-							<input name="number" type="text" palceholder="Write here"/>
+							<label for="user-phone">Fill your phone number</label>
+							<input id="user-phone" type="text" placeholder="+30996699666"/>
 						</div>
 						<div class="form-group">
-							<label for="text">You can put a comment there</label>
-							<textarea name="text" type="text" palceholder="Write here something"></textarea>
+							<label for="comment">You can send a comment</label>
+							<textarea id="comment" type="textarea" placeholder="Write here"></textarea>
 						</div>
 					</form>
 				</div>

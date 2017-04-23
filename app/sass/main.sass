@@ -1,9 +1,7 @@
 @import "bourbon"
 @import "_vars.sass"
 @import "_mixins.sass"
-@import "_form.sass"
-@import "_popup.sass"
-@import "_tabs.sass"
+
 
 %extend_before
 	position: absolute
@@ -233,7 +231,7 @@ h4.heading
 		p
 			text-align: left
 			font-size: 18px
-			line-height: 32px
+			line-height: 24px
 			letter-spacing: 2px
 		.sub-headline
 			margin: 30px 0
@@ -288,6 +286,7 @@ h4.heading
 					font-style: 20px
 
 #skills,
+#resume,
 #blog,
 #contact,
 	.headline
@@ -476,6 +475,23 @@ h4.heading
 		&:nth-child(even)
 			.w-poster
 				float: right
+
+#contact
+	.w-form
+		label
+			display: inline-block
+			margin-bottom: 5px
+			width: 100%
+		input
+			margin-bottom: 15px
+			width: 100%
+			border: 1px solid #ccc
+			text-indent: 10px
+			line-height: 30px
+		textarea
+			width: 100%
+			border: 1px solid #ccc
+			text-indent: 10px
 
 footer
 	background-color: $main

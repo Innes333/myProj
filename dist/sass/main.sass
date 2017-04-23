@@ -21,8 +21,8 @@ header
 	background-image: url("../img/galaxy.jpg")
 	background-size: cover
 	background-attachment: fixed
-	padding: 30px
-	border: 15px solid #fff
+	padding: 25px
+	border: 25px solid #fff
 	.flower-1
 		position: absolute
 		bottom: -40px
@@ -48,8 +48,8 @@ header
 		left: 50%
 		transform: translate(-50%,-55%)
 		.title
-			font-size: 100px
-			line-height: 110px
+			font-size: 110px
+			line-height: 120px
 			letter-spacing: 5px
 			background-color: #FFF
 			//background-image: url("../img/title-bg.jpg")
@@ -205,7 +205,7 @@ h4.heading
 		position: absolute
 		top: -80px
 		left: 0
-		padding: 80px 50px 65px
+		padding: 80px 50px 90px
 		min-height: 555px
 		z-index: 11
 		color: #fff
@@ -231,7 +231,7 @@ h4.heading
 		p
 			text-align: left
 			font-size: 18px
-			line-height: 27px
+			line-height: 24px
 			letter-spacing: 2px
 		.sub-headline
 			margin: 30px 0
@@ -275,20 +275,18 @@ h4.heading
 					background-color: rgba(66, 38, 134, 0.3)
 				img
 					width: 105%
-					transition: transform 0.4s
-					&:hover
-						transform: scale(1.5)
 			.w-info
 				margin-top: 30px
 				text-align: center
 			.w-hobby
 				margin-top: 20px
-				i
-					padding-left: 10px
+				.fa
+					margin: 0 5px
 					color: $main
-					font-size: 20px
+					font-style: 20px
 
 #skills,
+#resume,
 #blog,
 #contact,
 	.headline
@@ -477,6 +475,19 @@ h4.heading
 		&:nth-child(even)
 			.w-poster
 				float: right
+
+#contact
+	.w-form
+		label
+			display: inline-block
+			margin-bottom: 5px
+			width: 100%
+		input
+			margin-bottom: 15px
+			width: 100%
+			border: 1px solid #ccc
+			text-indent: 10px
+			line-height: 30px
 
 footer
 	background-color: $main
