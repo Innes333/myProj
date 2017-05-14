@@ -50,7 +50,7 @@ gulp.task('compress', function() {
 
 gulp.task('scriptsConcat', function() {
   return gulp.src('app/libs/**/*.js')
-    .pipe(concat('plagin.min.js'))
+    .pipe(concat('plugin.min.js'))
     .pipe(uglify(''))
     .pipe(gulp.dest('dist/js'));
 });

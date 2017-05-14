@@ -17,8 +17,8 @@
 //Custom Styles Here
 header
 	position: relative
-	//background-image: url("../img/bg.jpg")
-	background-image: url("../img/galaxy.jpg")
+	background-image: url("../img/bg.jpg")
+	// background-image: url("../img/galaxy.jpg")
 	background-size: cover
 	background-attachment: fixed
 	padding: 25px
@@ -52,8 +52,8 @@ header
 			line-height: 120px
 			letter-spacing: 5px
 			background-color: #FFF
-			//background-image: url("../img/title-bg.jpg")
-			background-image: url("../img/galaxy.jpg")
+			background-image: url("../img/title-bg.jpg")
+			// background-image: url("../img/galaxy.jpg")
 			background-repeat: no-repeat
 			background-attachment: fixed
 			background-size: 120%
@@ -212,7 +212,7 @@ h4.heading
 		text-align: center
 		background-color: #5a5aa3
 		background: filter-gradient(#503388, #c178a7, horizontal)
-		background: linear-gradient(left top, #503388 0%, #453184 17%, #5d43a5 49%, #8b4aa3 70%, #914fbc 100%)
+		background: linear-gradient(left top,#503388 0,#453184 17%,#5d43a5 49%,#844eb5 70%,#a160dc 100%)
 		.headline
 			position: relative
 			margin-bottom: 40px
@@ -306,16 +306,16 @@ h4.heading
 			background-color: #000
 
 #skills
-	padding-top: 70px
-	padding-bottom: 110px
+	padding-top: 100px
+	padding-bottom: 140px
 	text-align: center
-	.space3d
-		margin-top: -40px
-		perspective: 1000px
-		width: 250px
-		height: 250px
-		text-align: center
-		display: inline-block
+.space3d
+	margin-top: -40px
+	perspective: 1000px
+	width: 250px
+	height: 250px
+	text-align: center
+	display: inline-block
 	.cube-box
 		display: inline-block
 		transition: all 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275)
@@ -329,8 +329,8 @@ h4.heading
 		position: absolute
 		user-select: none
 		overflow: hidden
-		border: 1px solid $main
-		background: $main
+		border: 1px solid $mainpink
+		background: $mainpink
 		box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.1), 0 0 50px rgba(0, 0, 0, 0.3)
 		color: #fff
 		line-height: 250px
@@ -340,8 +340,8 @@ h4.heading
 		cursor: pointer
 		@include transition(background 0.4s)
 		&:hover
-			background-color: #2d1565
-			border: 1px solid #2d1565
+			background-color: #531888
+			border: 1px solid #531888
 	.cube-front
 		width: 250px
 		height: 250px
@@ -392,25 +392,91 @@ h4.heading
 			top: 0
 
 // stars section
-.nice-stars
+.flowers
 	position: relative
-	background-color: $main
-	background: linear-gradient(#2e0e70 0,#351476 17%,#6438af 80%,#914fbc 100%)
+	height: 300px
+	background-image: url(../img/flow-bg.jpg)
+	background-size: cover
+	background-position-y: -50px
 	overflow: hidden
 	color: #fff
-	#stars
-		width: 100%
-		height: 300px
-	.label
+	.flowl-1
 		position: absolute
-		top: 50%
+		left: 0
+		width: 100%
+		height: 100%
+		background-image: url(../img/fl.png)
+		animation: 20s linear 0s infinite slowDown
+	.flowl-2
+		position: absolute
+		left: 0
+		width: 100%
+		height: 100%
+		background-image: url(../img/fl.png)
+		animation: 15s linear 0s infinite slowDown
+	.flowl-3
+		position: absolute
+		left: 0
+		width: 100%
+		height: 100%
+		transform: rotate(180deg)
+		background-image: url(../img/fl.png)
+		animation: 10s linear 0s infinite slowDown
+
+
+@keyframes slowDown
+	0%
+		top: -300px
+	20%
+		left: -50px
+	50%
+		left: 0px
+	100%
+		top: 260px
 		left: 50px
-		margin-top: -15px
-		font-size: 25px
-		text-transform: uppercase
+
 
 // Resume section
 #resume
+	margin-top: 80px
+	.exp-desc
+		margin-bottom: 50px
+		text-align: center
+		h4
+			font-size: 25px
+			font-weight: 400
+			font-family: inherit
+			text-transform: uppercase
+			letter-spacing: 4px
+		.exp-img
+			display: inline-block
+			border-radius: 50%
+			border: 10px solid $white
+			width: 165px
+		.exp-title
+			position: relative
+			display: inline-block
+			margin-left: 40px
+			width: calc(100% - 220px)
+			height: 110px
+			padding-right: 35px
+			background: $lightmain
+			background: linear-gradient(to right, $lightmain, $mainpink);
+			color: $white
+			line-height: 110px
+			vertical-align: middle
+			&::before
+				position: absolute
+				top: 0
+				left: -138px
+				content: ''
+				height: 110px
+				border-right: 70px solid $lightmain
+				border-top: 54px solid transparent
+				border-bottom: 54px solid transparent
+				border-left: 70px solid transparent
+				z-index: -1
+
 	.experience
 		position: relative
 		.exp-line
