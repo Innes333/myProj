@@ -15,13 +15,21 @@
 	};
 
 	var methods = {
+
 	 getHeight: function(el) {
 		el.css('height', window.innerHeight);
 		},
-		toggleClasses: function(el, sel) {
-			el.on('click', function() {
-				el.toggleClass(sel)});
+
+		toggleClasses: function(el, activeClass) {
+			el.on('click', function(e) {
+				e.stopPropagation();
+				el.toggleClass(activeClass)
+				$(document).on('click', function() {
+					el.removeClass(activeClass);
+				})
+			});
 		},
+
 		burgerPos: function (el) {
 			window.onscroll = function() {
 				if ( window.scrollY > (window.innerHeight)) {
@@ -31,6 +39,7 @@
 				}
 			};
 		},
+
 		cubeRotation: function(cube) {
 			cube.on('click', function(e) {
 				var that = $(this),
@@ -40,21 +49,68 @@
 						tabIndex = that.index(),
 						tabsArray = $('.tab');
 
-				console.log(elIndex);
-				console.log(tabIndex);
-				console.log(rotateX, tabIndex);
 				that.parent().css({
-						'transform': 'rotateX(' + rotateX + 'deg) ' +
-						'rotateY(' + rotateY + 'deg)'
-					});
-					for (i=0; i < tabsArray.length; i++) {
-						$(tabsArray[i]).removeClass('active');
-					};
-					$(tabsArray[elIndex]).addClass('active');
+					'transform': 'rotateX(' + rotateX + 'deg) ' +
+					'rotateY(' + rotateY + 'deg)'
+				});
+				for (i=0; i < tabsArray.length; i++) {
+					$(tabsArray[i]).removeClass('active');
+				};
+				$(tabsArray[elIndex]).addClass('active');
 			});
+		},
 
-		}
-		
+		renderMap: function() {
+	 		var mapEl = document.getElementById('map');
+      var kievCrd = {lat: 50.4506593, lng: 30.5148581};
+      var map = new google.maps.Map(mapEl, {
+        zoom: 5,
+        center: kievCrd,
+        mapTypeControl: false,
+				scaleControl: false,
+				streetViewControl: false,
+        backgroundColor: '#a87ece',
+        styles: [
+        {
+				    "featureType": "all",
+				    "elementType": "geometry",
+				    "stylers": [
+				      { "color": '#a87ece' }
+				    ]
+				  }, {
+				    "featureType": "administrative",
+				    "elementType": "geometry",
+				    "stylers": [
+				      { "color": '#000000' }
+				    ]
+				  }, {
+				    "featureType": "road",
+				    "elementType": "geometry",
+				    "stylers": [
+				      { "color": '#cccccc' }
+				    ]
+				  }, {
+				    "featureType": "water",
+				    "elementType": "geometry",
+				    "stylers": [
+				      { "color": '#cccccc' }
+				    ]
+				  },{
+				    "featureType": "landscape",
+				    "elementType": "labels",
+				    "stylers": [
+				      { "visibility": "on" }
+				    ]
+				  }
+				]
+				
+      });
+      var marker = new google.maps.Marker({
+        position: kievCrd,
+        map: map,
+        mapTypeId: 'terrain'
+      });
+    }		
 
 };
 
@@ -69,6 +125,10 @@
 		methods.burgerPos(sel.navBar);
 		// cube rotatio
 		methods.cubeRotation(cube.cube);
+
+		methods.renderMap();
+
+		 
 
 	});
 

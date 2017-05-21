@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="css/header.min.css">
 	<link rel="stylesheet" href="css/main.min.css">
 	<link rel="stylesheet" href="fonts/IconMoon/icon.css">
+	<script src="http://maps.google.com/maps/api/js?key=AIzaSyDeQ0u4qmmTOrvSAMlV5UF9fIVOs9v7o0A"></script>
 	<!-- Load CSS End -->
 
 </head>
@@ -255,45 +256,24 @@
 		<h3 class="headline">Contact</h3>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-5">
-					<div class="contact w-phone">
-						<span class="icon-phone2"></span>
-						+38098-76-27-127
-					</div>
-					<div class="contact w-mail">
-						<span class="icon-mail2"></span>
-						innes333@gmail.com
-					</div>
-					<div class="contact w-fb">
-						<span class="icon-facebook"></span>
-						Find me on <a href="https://www.facebook.com/Innes333">Facebook</a>
-					</div>
-					<div class="contact w-fb">
-						<span class="icon-facebook"></span>
-						Find me on <a href="https://www.linkedin.com/in/innes333/">Linkedin</a>
-					</div>
-				</div>
-
-				<div class="col-md-7">
+				<div class="col-md-6">
 					<form class="w-form" action="">
 						<div class="form-group">
-							<label for="user-name">Fill your name</label>
-							<input id="user-name" type="text" placeholder="Write here your name">
+							<input id="user-name" type="text" placeholder="Name">
+							<input id="user-mail" type="text" placeholder="E-mail">
 						</div>
-						<div class="form-group">
-							<label for="user-mail">Fill your e-mail</label>
-							<input id="user-mail" type="text" placeholder="example@gmail.com">
+						<div class="form-group">							
+							<input id="user-phone" type="text" placeholder="Phone number"/>
 						</div>
-						<div class="form-group">
-							<label for="user-phone">Fill your phone number</label>
-							<input id="user-phone" type="text" placeholder="+30996699666"/>
-						</div>
-						<div class="form-group">
-							<label for="comment">You can send a comment</label>
-							<textarea id="comment" type="textarea" placeholder="Write here"></textarea>
+						<div class="form-group">							
+							<textarea id="comment" type="textarea" placeholder="Your message"></textarea>
 						</div>
 					</form>
 				</div>
+				<div class="col-md-6">
+					<div id="map"></div>
+				</div>
+
 			</div>
 		</div>
 	</section>
@@ -329,9 +309,11 @@
 	<![endif]-->
 
 	<!-- Load Scripts Start -->
+
 	<script src="js/jquery-2.2.0.min.js"></script>
 	<script src="js/plagin.min.js"></script>
 	<script src="js/common.min.js"></script>
+
 	<!-- Load Scripts End -->
 
 </body>
