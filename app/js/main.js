@@ -64,7 +64,7 @@
 	 		var mapEl = document.getElementById('map');
       var kievCrd = {lat: 50.4506593, lng: 30.5148581};
       var map = new google.maps.Map(mapEl, {
-        zoom: 5,
+        zoom: 4,
         center: kievCrd,
         mapTypeControl: false,
 				scaleControl: false,
@@ -75,25 +75,25 @@
 				    "featureType": "all",
 				    "elementType": "geometry",
 				    "stylers": [
-				      { "color": '#a87ece' }
+				      { "color": '#cbafe4' }
 				    ]
 				  }, {
 				    "featureType": "administrative",
 				    "elementType": "geometry",
 				    "stylers": [
-				      { "color": '#333333' }
+				      { "color": '#a87ece' }
 				    ]
 				  }, {
 				    "featureType": "road",
 				    "elementType": "geometry",
 				    "stylers": [
-				      { "color": '#cccccc' }
+				      { "color": '#ffffff' }
 				    ]
 				  }, {
 				    "featureType": "water",
 				    "elementType": "geometry",
 				    "stylers": [
-				      { "color": '#cccccc' }
+				      { "color": '#ffffff' }
 				    ]
 				  },{
 				    "featureType": "landscape",
@@ -105,9 +105,10 @@
 				]				
       });
 
-      var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+      var image = '../img/marker.png';
       var marker = new google.maps.Marker({
         position: kievCrd,
+	    width: 50,
         map: map,
 		    icon: image
       });
