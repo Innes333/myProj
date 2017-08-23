@@ -1,0 +1,254 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.wrap {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1024px;
+}
+
+.header {
+    padding: 15px 0 30px;
+    min-height: 180px;
+    color: #fff;
+    background: #ddc3fd;
+    background: -webkit-linear-gradient(-45deg, #ddc3fd 0, #c4c4fd 60%, #95c5fc 100%);
+    background: linear-gradient(-45deg, #ddc3fd 0, #c4c4fd 60%, #95c5fc 100%);
+    background: -o-linear-gradient(-45deg,  #ddc3fd 0, #c4c4fd 60%, #95c5fc 100%);
+    background: -ms-linear-gradient(-45deg,  #ddc3fd 0, #c4c4fd 60%, #95c5fc 100%);/*For IE10*/
+    background: -moz-linear-gradient(-45deg,  #ddc3fd 0, #c4c4fd 60%, #95c5fc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#ddc3fd, endColorstr=#95c5fc,GradientType=1 );
+}
+
+.header .title {
+    margin: 25px auto;
+    /* max-width: 600px; */
+    text-align: center;
+    line-height: 34px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 20px;
+    color: #333;
+}
+
+.w-logo .logo {
+    font-size: 16px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    letter-spacing: 1px;
+    border-radius: 50%;
+    background: #333;
+}
+
+.header .nav {
+    font-size: 0;
+}
+
+.nav .w-logo {
+    display: inline-block;
+    width: 20%;
+}
+
+.nav .w-name {
+    display: inline-block;
+    width: 80%;
+    font-size: 20px;
+    line-height: 60px;
+    text-align: right;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px #a6b1cc;
+}
+
+/*Upload button styles */
+.w-upload {
+    position: relative;
+    margin: 55px 0 35px;
+    text-align: center;
+}
+
+.upload-btn {
+    visibility: hidden;
+    position: absolute;
+}
+
+.upload-label {
+    position: relative;
+    display: inline-block;
+    font-size: 13px;
+    text-transform: uppercase;
+    height: 45px;
+    width: 245px;
+    letter-spacing: 2px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background: #333;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.upload-label:hover .hover-label {
+    top: -45px;
+}
+
+.hover-label {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 90px;
+    line-height: 45px;
+    transition: top 0.3s;
+}
+
+/*usere image box*/
+.main {
+    margin-top: 40px;
+    text-align: center;
+}
+.w-user-images {
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+}
+.w-user-images .title {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #a7c5fd;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.w-user-images .title::before {
+    position: absolute;
+    bottom: 0;
+    left: 35%;
+    content: '';
+    width: 30%;
+    height: 1px;
+    background: #adc5fd;
+}
+
+.w-user-images .image-thumbnail {
+    max-width: 150px;
+    max-height: 150px;
+    margin-top: 15px;
+    transition: box-shadow 0.8s;
+    cursor: pointer;
+}
+
+.w-user-images .image-thumbnail:hover {
+    box-shadow: 4px 6px 1px #d7dbf6;
+}
+
+.w-user-mosaic {
+    position: relative;
+    display: inline-block;
+    width: 74%;
+    text-align: right;
+}
+
+.w-user-mosaic #mosaic {
+    position: relative;
+    margin: 0 auto;
+    border: 2px dashed #b3c5fd;
+    transition: all 1s linear;
+    width: 100%;
+}
+
+.w-user-mosaic .download-btn {
+    position: absolute;
+    top: 11px;
+    right: -15px;
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #cbc3fd;
+    color: #fff;
+    z-index: 10001;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px #a6b1cc;
+    cursor: pointer;
+}
+
+.w-user-mosaic .download-btn:hover {
+    box-shadow: 2px 2px 3px #d7dbf6;
+}
+
+.w-user-mosaic .show-colors-btn {
+    position: absolute;
+    bottom: 62px;
+    right: -15px;
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #cbc3fd;
+    color: #fff;
+    z-index: 10001;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px #a6b1cc;
+    cursor: pointer;
+}
+
+.w-user-mosaic .show-colors-btn:hover {
+    box-shadow: 2px 2px 3px #d7dbf6;
+}
+
+.w-user-mosaic .spinner {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background: #fff url(./img/spinner.gif) no-repeat center center;
+    background-size: 450px;
+    border: 1px dashed #afc4fc;
+}
+
+.colors-svg {
+    min-height: 20px;
+    padding: 8px 20px;
+    border: 1px dashed #cbc3fd;
+}
+
+.colors-svg svg {
+    margin: 0 5px;
+}
+
+@media screen and (max-width: 920px) {
+    .w-user-images {
+        display: block;
+        width: 100%;
+    }
+
+    .w-user-images .image-thumbnail {
+        width: 100px;
+        height: 100px;
+        padding: 0 5px;
+    }
+
+    #mosaic {
+        margin-top: 20px;
+        width: 90%;
+    }
+
+    .w-user-mosaic {
+        width: 100%;
+    }
+}
