@@ -17,7 +17,7 @@
 //Custom Styles Here
 header
 	position: relative
-	background-image: url("../img/bg.jpg")
+	background-image: url("../img/sakura.jpg")
 	// background-image: url("../img/galaxy.jpg")
 	background-size: cover
 	background-attachment: fixed
@@ -52,7 +52,7 @@ header
 			line-height: 120px
 			letter-spacing: 5px
 			background-color: #FFF
-			background-image: url("../img/title-bg.jpg")
+			background-image: url("../img/sakura.jpg")
 			// background-image: url("../img/galaxy.jpg")
 			background-repeat: no-repeat
 			background-attachment: fixed
@@ -209,10 +209,11 @@ h4.heading
 		min-height: 555px
 		z-index: 11
 		color: #fff
+		font-weight: 600
 		text-align: center
-		background-color: #5a5aa3
-		background: filter-gradient(#503388, #c178a7, horizontal)
-		background: linear-gradient(left top,#503388 0,#453184 17%,#5d43a5 49%,#844eb5 70%,#a160dc 100%)
+		background-color: #9faef4
+		background: filter-gradient(#9faef4, #c19bf6, horizontal)
+		background: linear-gradient(-45deg, #9faef4 0, #bcc6fc 60%, #c19bf6 100%)
 		.headline
 			position: relative
 			margin-bottom: 40px
@@ -220,7 +221,7 @@ h4.heading
 			color: #fff
 			text-align: left
 			text-shadow: 2px 5px 5px $main
-			&:before
+			&::before
 				position: absolute
 				content: ''
 				bottom: -4px
@@ -232,7 +233,7 @@ h4.heading
 			text-align: left
 			font-size: 18px
 			line-height: 24px
-			letter-spacing: 2px
+			letter-spacing: 3px
 		.sub-headline
 			margin: 30px 0
 			color: #fff
@@ -285,7 +286,7 @@ h4.heading
 					width: 30px
 					height: 30px
 					border-radius: 50%
-					background-color: #9d5ed7
+					background-color: $mainblue
 					color: $white
 					margin: 0 5px
 					line-height: 30px
@@ -293,12 +294,13 @@ h4.heading
 #skills,
 #resume,
 #blog,
-#contact,
+#iam,
+#contact
 	.headline
 		position: relative
 		margin-bottom: 60px
 		padding-left: 50px
-		font-size: 32pxy
+		font-size: 32px
 		color: #000
 		text-align: left
 		&:before
@@ -309,6 +311,20 @@ h4.heading
 			height: 2px
 			width: 35px
 			background-color: #000
+
+#iam
+	margin: 90px 0 20px
+	text-align: center
+	.pie
+		svg
+			height: 400px
+		.graph:hover > *
+			opacity: 0.5
+		.graph-percent
+			transition: all 400ms ease-out
+			&:hover
+				stroke: $main
+				opacity: 1
 
 #skills
 	padding-top: 100px
@@ -334,8 +350,8 @@ h4.heading
 		position: absolute
 		user-select: none
 		overflow: hidden
-		border: 1px solid $mainpink
-		background: $mainpink
+		border: 1px solid #b58ef6
+		background: linear-gradient(-45deg,#b58ef6 0,#93a3f6 60%,#9b7be1 100%)
 		box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.1), 0 0 50px rgba(0, 0, 0, 0.3)
 		color: #fff
 		line-height: 250px
@@ -345,8 +361,8 @@ h4.heading
 		cursor: pointer
 		@include transition(background 0.4s)
 		&:hover
-			background-color: #531888
-			border: 1px solid #531888
+			background: linear-gradient(-45deg,#beadf5 0,#a8aafa 60%,#c19bf6 100%)
+			border: 1px solid #9669e0
 	.cube-front
 		width: 250px
 		height: 250px
@@ -400,45 +416,14 @@ h4.heading
 .flowers
 	position: relative
 	height: 300px
-	background-image: url(../img/flow-bg.jpg)
+	background: $mainblue
 	background-size: cover
 	background-position-y: -50px
 	overflow: hidden
 	color: #fff
-	.flowl-1
-		position: absolute
-		left: 0
+	canvas
 		width: 100%
-		height: 100%
-		background-image: url(../img/fl.png)
-		animation: 20s linear 0s infinite slowDown
-	.flowl-2
-		position: absolute
-		left: 0
-		width: 100%
-		height: 100%
-		background-image: url(../img/fl.png)
-		animation: 15s linear 0s infinite slowDown
-	.flowl-3
-		position: absolute
-		left: 0
-		width: 100%
-		height: 100%
-		transform: rotate(180deg)
-		background-image: url(../img/fl.png)
-		animation: 10s linear 0s infinite slowDown
 
-
-@keyframes slowDown
-	0%
-		top: -300px
-	20%
-		left: -50px
-	50%
-		left: 0px
-	100%
-		top: 260px
-		left: 50px
 
 
 // Resume section
@@ -465,8 +450,8 @@ h4.heading
 			width: calc(100% - 220px)
 			height: 110px
 			padding-right: 35px
-			background: $lightmain
-			background: linear-gradient(to right, $lightmain, $mainpink);
+			background: #c19bf6
+			background: linear-gradient(-45deg,#c19bf6 0,#bcc6fc 60%, #9faef4 100%)
 			color: $white
 			line-height: 110px
 			vertical-align: middle
@@ -476,7 +461,7 @@ h4.heading
 				left: -138px
 				content: ''
 				height: 110px
-				border-right: 70px solid $lightmain
+				border-right: 70px solid $mainblue
 				border-top: 54px solid transparent
 				border-bottom: 54px solid transparent
 				border-left: 70px solid transparent
@@ -490,16 +475,16 @@ h4.heading
 			left: calc(50% - 2px)
 			height: 100%
 			width: 2px
-			background-color: $lightmain
+			background-color: $main
 		.exp-year
 			display: inline-block
 			padding: 5px 10px
-			background-color: $lightmain
+			background-color: $mainblue
 			color: $white
 			margin-bottom: 8px
 		.exp-label
 			font-weight: 600
-			color: $main
+			color: $mainblue
 			margin-bottom: 8px
 			text-transform: uppercase
 			letter-spacing: 1px
@@ -515,7 +500,7 @@ h4.heading
 				margin-top: -7px
 				width: 15px
 				height: 15px
-				background-color: $lightmain
+				background-color: #beb4fa
 				border: 4px solid $white
 				border-radius: 50%
 			&::after
@@ -525,7 +510,7 @@ h4.heading
 				height: 82px
 				font-size: 70px
 				line-height: 70px
-				color: $lightmain
+				color: #beb4fa
 				width: 20px
 
 		.left-side > .exp-item

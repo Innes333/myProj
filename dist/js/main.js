@@ -43,11 +43,11 @@
 		cubeRotation: function(cube) {
 			cube.on('click', function(e) {
 				var that = $(this),
-						rotateX = that.data('rotate-x'),
-						rotateY = that.data('rotate-y'),
-						elIndex = that.data('index'),
-						tabIndex = that.index(),
-						tabsArray = $('.tab');
+					rotateX = that.data('rotate-x'),
+					rotateY = that.data('rotate-y'),
+					elIndex = that.data('index'),
+					tabIndex = that.index(),
+					tabsArray = $('.tab');
 
 				that.parent().css({
 					'transform': 'rotateX(' + rotateX + 'deg) ' +
@@ -62,60 +62,57 @@
 
 		renderMap: function() {
 	 		var mapEl = document.getElementById('map');
-      var kievCrd = {lat: 50.4506593, lng: 30.5148581};
-      var map = new google.maps.Map(mapEl, {
-        zoom: 4,
-        center: kievCrd,
-        mapTypeControl: false,
-				scaleControl: false,
-				streetViewControl: false,
-        backgroundColor: '#a87ece',
-        styles: [
-        {
-				    "featureType": "all",
-				    "elementType": "geometry",
-				    "stylers": [
-				      { "color": '#cbafe4' }
-				    ]
-				  }, {
-				    "featureType": "administrative",
-				    "elementType": "geometry",
-				    "stylers": [
-				      { "color": '#a87ece' }
-				    ]
-				  }, {
-				    "featureType": "road",
-				    "elementType": "geometry",
-				    "stylers": [
-				      { "color": '#ffffff' }
-				    ]
-				  }, {
-				    "featureType": "water",
-				    "elementType": "geometry",
-				    "stylers": [
-				      { "color": '#ffffff' }
-				    ]
-				  },{
-				    "featureType": "landscape",
-				    "elementType": "labels",
-				    "stylers": [
-				      { "visibility": "on" }
-				    ]
-				  }
-				]				
-      });
+			var kievCrd = {lat: 50.4506593, lng: 30.5148581};
+			var map = new google.maps.Map(mapEl, {
+			zoom: 4,
+			center: kievCrd,
+			mapTypeControl: false,
+					scaleControl: false,
+					streetViewControl: false,
+			backgroundColor: '#a87ece',
+			styles: [{
+			    "featureType": "all",
+			    "elementType": "geometry",
+			    "stylers": [
+			      { "color": '#cbafe4' }
+			    ]
+			  }, {
+			    "featureType": "administrative",
+			    "elementType": "geometry",
+			    "stylers": [
+			      { "color": '#a87ece' }
+			    ]
+			  }, {
+			    "featureType": "road",
+			    "elementType": "geometry",
+			    "stylers": [
+			      { "color": '#ffffff' }
+			    ]
+			  }, {
+			    "featureType": "water",
+			    "elementType": "geometry",
+			    "stylers": [
+			      { "color": '#ffffff' }
+			    ]
+			  },{
+			    "featureType": "landscape",
+			    "elementType": "labels",
+			    "stylers": [
+			      { "visibility": "on" }
+			    ]
+			  }]
+			});
 
-      var image = '../img/marker.png';
-      var marker = new google.maps.Marker({
-        position: kievCrd,
-	    width: 50,
-        map: map,
-		    icon: image
-      });
-		  
-    }		
+			var image = '../img/marker.png';
+			var marker = new google.maps.Marker({
+			position: kievCrd,
+			width: 50,
+			map: map,
+			    icon: image
+			});
+	    }
 
-};
+	};
 
 
 // Init of methods
@@ -131,8 +128,7 @@
 
 		methods.renderMap();
 
-		 
-
 	});
 
 })();
+
